@@ -1,42 +1,7 @@
-import os
+import os,shutil
 
 x = os.getcwd()
 
-for i in range(2,26):
-    with open(f'{x}\\day{i}\\day{i}.py','w') as f:
-        f.write(f'''inp = open('test.txt').read()
-
-class Day{i}:
-    def __init__(self,test,inp,run_test=True) -> None:
-        self.test = open(test).read()
-        self.input = open(inp).read()
-        self.run_test = run_test
-    
-    def part1(self,inp=None):
-        if not inp:inp=self.input
-
-    def part2(self,inp=None):
-        if not inp:inp=self.input
-
-    def tester(self):
-        print('TEST'.center(16,'#'))
-        self.part1(self.test)
-        print()
-        self.part2(self.test)
-        print('#'*16)
-        print()
-
-    def solve(self):
-        if self.run_test:
-            self.tester()
-        self.part1()
-        print()
-        self.part2()
-
-
-    
-
-
-solver = Day{i}('test.txt','input.txt')
-solver.solve()''')
+for i in range(1,10):
+    shutil.move(f'{x}\\day{i}',f'{x}\\day0{i}') 
     
